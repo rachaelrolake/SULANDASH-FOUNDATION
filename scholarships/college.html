@@ -52,7 +52,7 @@ input, select{
                         <div class="ht-address">
                             <ul>
                                 <li><i class="fa fa-phone"></i>+2341234525543</li>
-                                <li><i class="fa fa-envelope"></i>info@sulandsahfoundation.org</li>
+                                <a href="mailto:info@sulandsahfoundation.org"><li><i class="fa fa-envelope"></i>info@sulandsahfoundation.org</li></a>
                             </ul>
                         </div>
                     </div>
@@ -61,7 +61,6 @@ input, select{
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                             </ul>
                         </div>
@@ -84,13 +83,14 @@ input, select{
                             <div class="main-menu">
                                 <nav>
                                     <ul id="m_menu_active">
-                                        <li class=""><a href="index.html">Home</a></li>
+                                        <li class=""><a href="../index.html">Home</a></li>
+                                        <li class=""><a href="index.html">Scholarship Home</a></li>
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="javascript:void(0);">Scholarship</a>
                                             <ul class="submenu">
                                                 <li><a href="courses.html">South ibie educational Scholarship</a></li>
-                                                <li><a href="">Nigeria student educational grant</a></li>
-                                                <li><a href="">International scholarship award</a></li>
+                                                <li><a href="course-details.html">Nigeria student educational grant</a></li>
+                                                <li><a href="course-details.html">International scholarship award</a></li>
                                             </ul>
                                         </li>
                                         <!-- <li><a href="javascript:void(0);">teacher</a>
@@ -187,24 +187,20 @@ input, select{
                 <div class="col-lg-10">
                     <div class="about-left-content">
                         <div class="section-title">
-                            <h3 class="text-uppercase">Apply for <span class="primary-color">Secondary School</span> Scholarship</h3>
+                            <h3 class="text-uppercase">Apply for <span class="primary-color">College School</span> Scholarship</h3>
                         </div>
                         <div class="p-4 rounded" style="background-color: #e3e3e3;">
                             <h4 class="mb-3">Instructions</h4>
                             <hr>
                             <p style="color: black; font-weight: 500;">A valid Government-issued identity (ID) document (e.g. an International Travel Passport, a Voter’s Card, a National Identity Card or a Driver’s License).</p>
                             <p style="color: black; font-weight: 500;">Applicants who are below the age of 18 years and are unable to apply for a government ID can submit a birth certificate.</p>
-                            <p style="color: black; font-weight: 500;">An official letter from the Principal of your school stating the following: Your full name, Gender, Home Address, the name of your parent(s) or guardian(s).</p>
-                            <p style="color: black; font-weight: 500;">Note that the originals must be presented by successful applicants during the interviews:</p>
-                            <p style="color: black; font-weight: 500; margin-top: 5px;">a).  A recent passport photograph</p>
-                            <p style="color: black; font-weight: 500;">b) A 500-word essay, about “My family”.</p>
-                            <p style="color: black; font-weight: 500;margin: 20px 0px;">Note that originals of all the submitted documents will need to be viewed during the interview, which will only be attended by successful candidates.</p>
-                            <p style="color: black; font-weight: 500;">You must also meet the following criteria:</p>
-                            <p style="color: black; font-weight: 500;">1. Your age must be between 11-18 yrs old</p>
-                            <p style="color: black; font-weight: 500;">2. Must be of Good character and academic excellence.</p>
-                            <p style="color: black; font-weight: 500;">3. Must be able to present past acaemic result(s)</p>
-                            <p style="color: black; font-weight: 500;">4. Must be a Nigerian</p>
-                            <p style="color: black; font-weight: 500;">5. Must be from a family who is deemed to benefit from the foundation's assistance</p>
+                            <p style="color: black; font-weight: 500;">An official letter from your school (Head of Department) stating the following: Your full name, Gender, Matriculation number (Newly matriculated scholars who have not yet received a matriculation number or school ID must provide a provisional admission letter from their institution of study), Course Title and Level, Department of Study;</p>
+                            <p style="color: black; font-weight: 500;">Certified (by a qualified legal practitioner) copies of the following. Note that the originals must be presented by successful applicants during the interviews:</p>
+                            <p style="color: black; font-weight: 500; margin-top: 5px;">a) JAMB/UME result certificate</p>
+                            <p style="color: black; font-weight: 500;">b) Senior Secondary School Exam Certificate (WASSCE or NECO)</p>
+                            <p style="color: black; font-weight: 500;">c) A valid student ID for your host institution</p>
+                            <p style="color: black; font-weight: 500;">d) A recent passport photograph</p>
+                            <p style="color: black; font-weight: 500;">f) A 500-word essay, about “My family”.</p>
                             <div class="mt-6">
                                 <form class="mt-4">
                                     <div class="form-row">
@@ -258,34 +254,82 @@ input, select{
                                         </div>
                                       <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="Birth">Primary School Certificate</label>
-                                            <input type="file" id="certificate" class="form-control  upload" data-name="certificate">
+                                            <label for="Birth">Upload Your Senior Secondary School Exam Certificate (WASSCE or NECO)</label>
+                                            <input type="file" id="secCert" class="form-control  upload" data-name="secCert">
                                           </div>
                                         <div class="form-group col-md-6">
                                           <label for="Origin">State of Origin</label>
-                                          <input type="file" id="origin" class="form-control  upload" data-name="origin">
+                                          
+                                          <input type="file" id="origin" class="form-control upload" data-name="origin" style="margin-top: 25px;">
                                         </div>
                                       </div>
                                       <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="Last">recent passport photograph</label>
-                                            <input type="file" id="passport" class="form-control upload" data-name="passport">
+                                            <input type="file" id="passport" class="form-control  upload" data-name="passport">
                                           </div>
                                           <div class="form-group col-md-6">
                                             <label for="Last">A 500-word essay, about “My family”</label>
-                                            <input type="file" id="essay" class="form-control upload" data-name="essay">
+                                            <input type="file" id="essay" class="form-control  upload" data-name="essay">
                                           </div>
                                       </div>
                                       <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="Last">A minute Video on why you need the scholarship</label>
-                                            <input type="file" id="video" class="form-control upload" data-name="video">
+                                            <input type="file" id="video" class="form-control  upload" data-name="video">
                                           </div>
                                           <div class="form-group col-md-6">
-                                            <label for="Birth">Birth Certificate</label>
-                                            <input type="file" id="birth" class="form-control upload" data-name="birth">
+                                            <label for="Last">Upload Your Government Issued ID</label>
+                                            <input type="file" id="ID" class="form-control  upload" data-name="idCard">
                                           </div>
                                       </div>
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="Last">Upload your JAMB/UME Result certificate </label>
+                                            <input type="file" id="jambCert" class="form-control  upload" data-name="jambCert">
+                                          </div>
+                                          <div class="form-group col-md-6">
+                                            <label for="Last">A valid student ID for your host institution</label>
+                                            <input type="file" id="StudentID" class="form-control  upload" data-name="studentID">
+                                          </div>
+                                          
+                                      </div>
+                                      <div class="mt-4">
+                                        <label for="">What kind of tetiary institution are you enrolled in?</label>
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input position-static mr-2" type="radio" name="institution" id="University" value="University" aria-label="..." checked>
+                                            <small style="font-size: 15px; font-weight: 500;color: black;">University</small>
+                                          </div>
+                                          <div class="form-check ">
+                                            <input class="form-check-input position-static" type="radio" name="institution" id="Polytechnic" value="Polytechnic" aria-label="...">
+                                            <small style="font-size: 15px; font-weight: 500; color: black;">Polytechnic</small>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input position-static" type="radio" name="institution" id="College" value="College" aria-label="...">
+                                            <small style="font-size: 15px; font-weight: 500; color: black;">College of Education</small>  
+                                        </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input position-static" type="radio" name="institution" id="Others" value="Others" aria-label="...">
+                                            <small style="font-size: 15px; font-weight: 500; color: black;">Others</small>  
+                                        </div>
+                                      </div>
+
+                                      <div class="mt-4">
+                                        <label for="">What year of study are you currently in?</label>
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input position-static mr-2" type="radio" name="year" id="levelone" value="1" aria-label="..." checked>
+                                            <small style="font-size: 15px; font-weight: 500;color: black;">100 Level</small>
+                                          </div>
+                                          <div class="form-check ">
+                                            <input class="form-check-input position-static" type="radio" name="year" id="leveltwo" value="2" aria-label="...">
+                                            <small style="font-size: 15px; font-weight: 500; color: black;">200 Level</small>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input position-static" type="radio" name="year" id="levelthree" value="3" aria-label="...">
+                                            <small style="font-size: 15px; font-weight: 500; color: black;">300 Level or higher</small>  
+                                        </div>
+                                      </div>
+
                                       <div id="msg_box" class="mt-5"></div>
                                       <div id="msg_box2"></div>
                                       <div id="image-container">
@@ -298,7 +342,7 @@ input, select{
                                       </div>
                                       <div class="" style="display: flex; justify-content: center;">
                                       <button type="button" class="btn btn-primary btn-round mt-4"
-                                      onclick="postCMs('upload','msg_box3','msg_boxi')"  id="publish">Submit</button>
+                                      onclick="postCMs('upload','msg_box3','msg_boxi')" id="publish">Submit</button>
                                     </div>
                                   </form>
                             </div>
@@ -335,7 +379,7 @@ input, select{
     <script src="assets/js/jquery.slicknav.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/secondary.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="assets/files/publitio_js_sdk/build/publitio-api.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

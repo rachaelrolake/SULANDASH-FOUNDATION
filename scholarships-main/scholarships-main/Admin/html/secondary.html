@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SULANDSAH</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <link rel="stylesheet" href="../assets/css/dataTable.css" />
+ 
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a href="./index.html" class="text-nowrap logo-img">
+            <img src="../assets/images/logos/logo.png" width="180" alt="" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="" id="aside">
+         
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <header class="app-header" id="side">
+       
+      </header>
+      <!--  Header End -->
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold mb-4">Secondary Applicant List</h5>
+            <div class="flex justify-content-end">
+              <button class="btn btn-outline-primary items-center flex gap-x-1" id="invReportd" onclick="exportData()">
+                <iconify-icon icon="material-symbols:cloud-download" width="28" height="28"></iconify-icon> Download
+                Report</button>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 d-flex align-items-stretch">
+                <div class="card w-100">
+                  <div class="card-body p-4">
+                    <div class="table-responsive">
+                      <table class="table invoiceTable" id="dataTable">
+                        <thead>
+                          <tr class="text-center">
+                            <th></th>
+                            <th>Application ID</th>
+                            <th>fullname</th>
+                            <th>email</th>
+                            <th>address</th>
+                            <th>state</th>
+                            <th>phone</th>
+                            <th>Application Date</th>
+                            <th>Application Status</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0" id="showThem">
+      
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <table class="table invoiceTable hidden" id="invoiceTableFull">
+                      <thead>
+                        <tr class="text-center">
+                          <th></th>
+                          <th>Application ID</th>
+                          <th>fullname</th>
+                          <th>email</th>
+                          <th>address</th>
+                          <th>state</th>
+                          <th>phone</th>
+                          <th>Application Date</th>
+                          <th>Application Status</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0" id="showThem2">
+          
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/jquery.datatables.min.js"></script>
+  <script src="../assets/js/nav.js"></script>
+  <script src="../assets/js/secondary.js"></script>
+
+<script>
+  function exportData() {
+    var csv = [];
+    var table = document.getElementById("invoiceTableFull");
+    
+    // Add header to CSV
+    var header = [];
+    for (var h = 0; h < table.rows[0].cells.length; h++) {
+        header.push(table.rows[0].cells[h].innerText);
+    }
+    csv.push(header.join(','));
+
+    // Add rows to CSV
+    for (var i = 1; i < table.rows.length; i++) {
+        var row = [], cols = table.rows[i].querySelectorAll('td, th');
+
+        for (var j = 0; j < cols.length; j++) {
+            row.push(cols[j].innerText);
+        }
+
+        csv.push(row.join(','));
+    }
+
+    // Download CSV file
+    var csvContent = 'data:text/csv;charset=utf-8,' + csv.join('\n');
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', 'Secondary-Applicant-report');
+    document.body.appendChild(link);
+    link.click();
+}      
+
+</script>
+</body>
+
+</html>

@@ -9164,4 +9164,5 @@ textarea.form-control {
 
     .hovertext:hover {
       color: #e0a800;
+      transition: color 0.15s ease-in;
     }

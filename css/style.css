@@ -2640,7 +2640,7 @@ input[type="button"].btn-block {
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #78d5ef; }
+    background-color: #e79b37; }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #6c757d;
     background-color: transparent; }
@@ -2659,7 +2659,7 @@ input[type="button"].btn-block {
 .dropdown-item-text {
   display: block;
   padding: 0.25rem 1.5rem;
-  color: #212529; }
+  color: #212529 !important; }
 
 .btn-group,
 .btn-group-vertical {
@@ -9163,6 +9163,12 @@ textarea.form-control {
 
 
     .hovertext:hover {
-      color: #e0a800;
+      color: #bd2130;
       transition: color 0.15s ease-in;
+    }
+
+    .ftco-navbar-light.scrolled .trnbk {
+      padding-top: 0.9rem !important;
+      padding-bottom: 0.9rem !important;
+      color: #000 !important;
     }

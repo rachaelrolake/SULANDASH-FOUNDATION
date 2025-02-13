@@ -9176,10 +9176,11 @@ textarea.form-control {
 
     .grid-container {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 17px;
+      grid-template-columns: 1fr ;
+      row-gap: 20px;
       
     }
+
 
     .grid-items {
       box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05),
@@ -9188,72 +9189,24 @@ textarea.form-control {
       padding-right: 30px;
     }
 
+    .grid-items:hover {
+      box-shadow: 2px 2px 3px rgba(225, 165, 0, 0.7),
+          -2px -2px 3px rgba(225, 165, 0, 0.7);
+    }
+
     .highlightText {
       color: #155724;
     }
 
-    .redText {
-      color: #bd2130;
-    }
+   
 
     .hoverMe:hover {
       color: #e79b37;
       transition: color 0.15s ease-in;
     }
     
-
-    .carousel-inner {
-      padding: 1em;
-  }
-  
-  .card  {
-      margin: 0.5em;
-      box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, .18);
-      border-radius: 0;
-  }
-  
-  .card-body {
-      height: 250px;
-  }
-  
-  .img-wrapper {
-      
-      height: 60vw;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-  }
-  
-  img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-  }
-  
-  .carousel-control-prev, .carousel-control-next {
-      width: 6vh;
-      height: 6vh;
-      background-color: gray;
-      border: none;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: .8;
-  }
-  
-
-  @media screen and (min-width : 576px) {
-    .carousel-inner {
-        display: flex;
+    .menu-sty {
+      width: 33px;
     }
 
-    .carousel-item {
-        display: block;
-        margin-right: 0;
-        flex: 0 0 calc(100%/3);
-    }
-
-    .img-wrapper {
-        height: 24vw;
-    }
-
-}
+    

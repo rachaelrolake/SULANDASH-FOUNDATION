@@ -9176,10 +9176,11 @@ textarea.form-control {
 
     .grid-container {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 17px;
+      grid-template-columns: 1fr ;
+      row-gap: 20px;
       
     }
+
 
     .grid-items {
       box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05),
@@ -9188,13 +9189,16 @@ textarea.form-control {
       padding-right: 30px;
     }
 
+    .grid-items:hover {
+      box-shadow: 2px 2px 3px rgba(225, 165, 0, 0.7),
+          -2px -2px 3px rgba(225, 165, 0, 0.7);
+    }
+
     .highlightText {
       color: #155724;
     }
 
-    .redText {
-      color: #bd2130;
-    }
+   
 
     .hoverMe:hover {
       color: #e79b37;

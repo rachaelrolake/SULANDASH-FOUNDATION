@@ -7311,7 +7311,8 @@ h1, h2, h3, h4, h5,
       position: relative; } 
     
       .activeMenu {
-        padding-left: 20px;
+        padding-left: 19px;
+        padding-bottom: .9rem;
       }
     }
   .ftco-navbar-light .navbar-brand {

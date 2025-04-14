@@ -170,7 +170,7 @@
         <div class="footer-top has-color pt--120 pb--30">
             <div class="container">
                 <div class="footer-bottom">
-                    <p>Copyright © <span><a class="primary-color"  target="_blank">2024</a> </span> - All Rights Reserved.</p>
+                    <p>Copyright © <span id="year"><a class="primary-color"  target="_blank">2024</a> </span> - All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -187,6 +187,10 @@
     <script src="assets/js/jquery.slicknav.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
+    <script>
+        const year = new Date().getFullYear();
+        document.querySelector('#year a').textContent = year;
+      </script>
 </body>
 
 </html>

@@ -318,7 +318,7 @@ input, select{
         <div class="footer-top has-color pt--120 pb--30">
             <div class="container">
                 <div class="footer-bottom">
-                    <p>Copyright © <span><a class="primary-color"  target="_blank">2024</a> </span> - All Rights Reserved.</p>
+                    <p>Copyright © <span id="year"><a class="primary-color"  target="_blank">2024</a> </span> - All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -339,6 +339,10 @@ input, select{
     <script src="assets/js/secondary.js"></script>
     <script src="assets/files/publitio_js_sdk/build/publitio-api.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const year = new Date().getFullYear();
+        document.querySelector('#year a').textContent = year;
+      </script>
 </body>
 
 </html>

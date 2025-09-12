@@ -155,7 +155,7 @@ async function openInvoice() {
 
   openInvoice()
 
-  function openDoor(){
+   function openDoor(){
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -168,14 +168,53 @@ async function openInvoice() {
       if (result.isConfirmed) {
         $.ajax({
           type: "GET",
-          url: `${HOST}?updateApp&id=${id}&datas=${datas}`,
+          url: `${HOST}?updateApp&id=${id}&datas=${datas}&data3=1`,
           dataType: "json",
           success: function (data) {
             console.log(data);
             if (data.status === 1) {
               Swal.fire("Updated", data.message, "success");
               setTimeout(() => {
-                window.location.href="./secondary.html";
+                window.location.href="./primary.html";
+              }, 1000);
+
+            } else {
+              Swal.fire(
+                "Try again!",
+                "Something went wrong, try again !",
+                "error"
+              );
+            }
+          },
+          error: function (request, error) {
+            Swal.fire("Try again!", "Something went wrong, try again !", "error");
+          },
+        });
+      }
+    });
+  }
+
+  function rejectApp(){
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, Reject it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          type: "GET",
+          url: `${HOST}?updateApp&id=${id}&datas=${datas}&data3=2`,
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+            if (data.status === 1) {
+              Swal.fire("Updated", data.message, "success");
+              setTimeout(() => {
+                window.location.href="./primary.html";
               }, 1000);
 
             } else {

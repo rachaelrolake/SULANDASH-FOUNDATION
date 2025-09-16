@@ -63,87 +63,81 @@ function postCMs(theImagClass, boxi1, boxi2) {
     data: {},
   };
   
-  async function uploadFiles() {
-   
-    for (let fileInput of fileInputs) {
-      if (fileInput.files.length > 0) {
-        for (let file of fileInput.files) {
-          const reader = new FileReader();
-          console.log(file);
-          reader.readAsBinaryString(file);
-         
-          loader.style.display = 'block';
-          loadedImage.style.display = 'block';
-          try {
-            let data = await publitio.uploadFile(file, 'file', {
-              title: `${file.name} - ${fileInput.dataset.name}`,
-              public_id: `${file.name.replace(/\.[^/.]+$/, "")}` // Removing file extension for public_id
-            });
+ async function uploadFiles() {
+  let uploads = [];
 
-            // console.log('File uploaded:', data.url_preview);
-            // Assuming `data.url_preview` contains the URL to the uploaded file
+  for (let fileInput of fileInputs) {
+    if (fileInput.files.length > 0) {
+      for (let file of fileInput.files) {
+        uploads.push(
+          publitio.uploadFile(file, 'file', {
+            title: `${file.name} - ${fileInput.dataset.name}`,
+            public_id: `${file.name.replace(/\.[^/.]+$/, "")}`
+          }).then((data) => {
             if (!obj.data[fileInput.dataset.name]) {
               obj.data[fileInput.dataset.name] = [];
             }
-            obj.data[fileInput.dataset.name] = data.url_preview
-            // console.log(obj.data)
-          } catch (error) {
-            console.log(error);
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: "Error Uploading your files, try again!",
-            });
-            $("#" + boxi2).html(``);
-            return;
-          }
-        }
-      } else {
-        alert("Upload all required files");
-        $("#" + boxi1).html(``);
-        return; // Stop execution if no file is selected
+            obj.data[fileInput.dataset.name].push(data.url_preview);
+          })
+        );
       }
+    } else {
+      alert("Upload all required files");
+      $("#" + boxi1).html(``);
+      return;
     }
+  }
+
+  loader.style.display = 'block';
+  loadedImage.style.display = 'block';
+
+  try {
+    await Promise.all(uploads);
 
     // Handle other inputs
     allInputs.forEach(allInput => {
       obj.data[allInput.dataset.name] = allInput.value;
     });
-
     allRadioBoxs.forEach((allRadioBox) => {
       if (allRadioBox.checked) {
         obj.data[allRadioBox.name] = allRadioBox.value;
       }
     });
 
-    console.log(obj);
-    let StringedData = JSON.stringify(obj);
     loader.style.display = 'none';
     loadedImage.style.display = 'none';
-    publixh.style.display = 'none';
-    
-    
+    publixh.disabled = true;
+
     $.ajax({
       type: "POST",
       url: HOST,
       dataType: "json",
-      data: StringedData,
+      contentType: "application/json",
+      data: JSON.stringify(obj),
       success: function(data) {
-      
         Swal.fire({
           title: "Good job!",
-         text: data.message,
-        })
+          text: data.message,
+        });
         setTimeout(() => {
-          window.location.reload()
+          window.location.reload();
         }, 1000);
       },
       error: function(request, error) {
-       
+        console.log(error);
       }
     });
-    
+  } catch (error) {
+    console.log(error);
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Error Uploading your files, try again!",
+    });
+    $("#" + boxi2).html(``);
   }
+}
+
 
   uploadFiles();
 }
